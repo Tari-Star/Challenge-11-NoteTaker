@@ -1,0 +1,22 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "note-taking application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tari-Star",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tari-Star/Challenge-11-NoteTaker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tari-Star/Challenge-11-NoteTaker/issues"
+  },
+  "homepage": "https://github.com/Tari-Star/Challenge-11-NoteTaker#readme"
+}
