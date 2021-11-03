@@ -1,4 +1,3 @@
-const { RSA_NO_PADDING } = require("constants");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -23,11 +22,11 @@ app.get("/notes", (req, res) => {
 });
 
 app.post("/api/notes", (req, res) => {
-    store
-    .addNote(req.body).then((note) => res.json(note))
+  store
+    .addNote(req.body)
+    .then((note) => res.json(note))
     .catch((err) => res.status(500).json(err));
 });
-
 
 app.get("/api/notes", (req, res) => {
   store
@@ -36,6 +35,16 @@ app.get("/api/notes", (req, res) => {
       return res.json(notes);
     })
     .catch((err) => res.status(500).json(err));
+});
+
+app.delete("/api/notes/:id", (req, res) => {
+  let noteId = req.params.id.toString();
+  console.log("DELETE note request");
+  let data = JSON.parse(this.read());
+  const newData = data.filter((note) => note.id.toString() !== noteId);
+  this.write();
+  console.log("Successfully deleted!");
+  res.json(newData);
 });
 
 app.listen(PORT, () => {
