@@ -37,16 +37,6 @@ app.get("/api/notes", (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-app.delete("/api/notes/:id", (req, res) => {
-  let noteId = req.params.id.toString();
-  console.log("DELETE note request");
-  let data = JSON.parse(this.read());
-  const newData = data.filter((note) => note.id.toString() !== noteId);
-  this.write();
-  console.log("Successfully deleted!");
-  res.json(newData);
-});
-
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
 });
